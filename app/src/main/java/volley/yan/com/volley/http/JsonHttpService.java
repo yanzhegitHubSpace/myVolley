@@ -49,7 +49,6 @@ public class JsonHttpService implements IHttpService {
             httpPost = new HttpPost(url);
             ByteArrayEntity byteArrayEntity = new ByteArrayEntity(requestData);
             httpPost.setEntity(byteArrayEntity);
-            Log.d("yanzhe",  "---->" + httpPost.getEntity());
             httpClient.execute(httpPost, httpResponseHandler);
         } catch (IOException e) {
             httpListener.onFailure();
@@ -74,9 +73,7 @@ public class JsonHttpService implements IHttpService {
             // 处理数据
             // 响应码
             int statusCode = response.getStatusLine().getStatusCode();
-            Log.d("yanzhe", "请求响应码   " + statusCode);
             if (statusCode == 200) {
-                Log.d("yanzhe", getStrFromInputSteam(response.getEntity().getContent()));
                 httpListener.onSuccess(response.getEntity());
             }
             return null;

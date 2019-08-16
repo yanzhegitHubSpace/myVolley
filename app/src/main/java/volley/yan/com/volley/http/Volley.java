@@ -45,7 +45,6 @@ public class Volley {
 
 
     public void login() {
-        Log.d("yanzhe", "invoke login interface");
         String url = "http://192.168.198.142:9090/api//test/login";
         User user = new User();
         user.setUserName("18792403286");
@@ -54,14 +53,11 @@ public class Volley {
             Volley.sendRequest(user, url, LoginReponse.class, new IDataListener() {
                 @Override
                 public void onSuccess(Object o) {
-                    Log.d("yanzhe", "请求成功");
                     String s = JSON.toJSONString(o);
-                    Log.d("yanzhe", s);
                 }
 
                 @Override
                 public void onFailure() {
-                    Log.d("yanzhe", "请求失败");
                 }
             });
 //        }

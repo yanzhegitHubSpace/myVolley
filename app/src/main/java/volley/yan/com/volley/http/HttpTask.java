@@ -20,7 +20,6 @@ public class HttpTask<T> implements Runnable {
         httpService.setUrl(requestHolder.getUrl());
         T request = requestHolder.getRequestInfo();
         String requestInfo = JSON.toJSONString(request);
-        Log.d("yanzhe", "请求参数 ： " + requestInfo.getBytes());
         httpService.setRequestData(requestInfo.getBytes());
     }
 

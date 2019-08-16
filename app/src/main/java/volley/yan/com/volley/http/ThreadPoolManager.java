@@ -50,7 +50,6 @@ public class ThreadPoolManager {
                     /**
                      * 阻塞式函数
                      */
-                    Log.d("yanzhe", "等待队列数    " + taskQuene.size());
                     futureTask = (FutureTask) taskQuene.take();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -65,7 +64,6 @@ public class ThreadPoolManager {
     };
 
     public <T> void exute(FutureTask<T> futureTask) throws InterruptedException {
-        Log.d("yanzhe", "执行   " + futureTask.toString());
         taskQuene.put(futureTask);
     }
 
