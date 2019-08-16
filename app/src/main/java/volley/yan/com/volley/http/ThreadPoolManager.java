@@ -39,6 +39,7 @@ public class ThreadPoolManager {
 
     public static ThreadPoolManager getInstance() {
         return instance;
+
     }
 
     private Runnable runnable = new Runnable() {

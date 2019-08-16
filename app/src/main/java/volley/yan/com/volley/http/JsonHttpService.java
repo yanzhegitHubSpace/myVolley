@@ -93,7 +93,7 @@ public class JsonHttpService implements IHttpService {
             }
             return buffer.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            httpListener.onFailure();
         }
         return "";
     }
